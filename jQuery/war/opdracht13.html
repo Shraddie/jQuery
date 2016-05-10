@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <title>jQuery Slide OnClick</title>
+    <style>
+    	img {
+    		width:300px;
+    		height:200px;
+    		position:relative;
+    	}
+    	div {
+    		width: 300px;
+    		height:200px;
+    		overflow:hidden;
+    		white-space: nowrap;
+    		
+    	}
+    	
+    </style>
+  </head>
+
+  <body>
+  
+  <div id="div1"><img src="forehead1.jpg"><img src="forehead3.jpg"></div>
+  <div id="div2"><img src="midhead1.jpg"><img src="midhead3.jpg"></div>
+  <div id="div3"><img src="underhead1.jpg"><img src="underhead3.jpg"></div>
+  
+<script>
+var imgArray1 = ["forehead1.jpg", "forehead3.jpg", "forehead5.jpg"];
+var imgArray2 = ["midhead1.jpg", "midhead3.jpg", "midhead5.jpg"];
+var imgArray3 = ["underhead1.jpg", "underhead3.jpg", "underhead5.jpg"];
+var index1 = 0;
+var index2 = 0;
+var index3 = 0;
+
+$('div').eq(0).click(function() {
+	index1++;
+	$("img", this).animate({
+        left: "-=100%"
+    }, 2000, function () {
+    	$("#div1 img").css('left', 'initial');
+    	$("#div1 img").eq(0).attr('src', imgArray1[index1%3]);
+    	$("#div1 img").eq(1).attr('src', imgArray1[(index1+1)%3]);
+    });
+});
+
+$('div').eq(1).click(function() {
+	index2++;
+	$("img", this).animate({
+        left: "-=100%"
+    }, 2000, function () {
+    	$("#div2 img").css('left', 'initial');
+    	$("#div2 img").eq(0).attr('src', imgArray2[index2%3]);
+    	$("#div2 img").eq(1).attr('src', imgArray2[(index2+1)%3]);
+    });
+});
+
+$('div').eq(2).click(function() {
+	index3++;
+	$("img", this).animate({
+        left: "-=100%"
+    }, 2000, function () {
+    	$("#div3 img").css('left', 'initial');
+    	$("#div3 img").eq(0).attr('src', imgArray3[index3%3]);
+    	$("#div3 img").eq(1).attr('src', imgArray3[(index3+1)%3]);
+    });
+});
+
+</script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <title>jQuery Slide OnClick</title>
+    <style>
+    	div {
+    		width: 200px;
+    		height: 200px;
+    		background-color: grey;
+    	}
+    </style>
+  </head>
+
+  <body>
+  <div id="blok1"></div>
+  <div id="blok2"></div>
+ 	<input id="button" type="button" value="OK">
+	 
+	<script>
+	$( "#blok1" ).hover(
+		function() {$( this ).css('background-color', 'green');},
+		function() {$( this ).css('background-color', 'blue');}
+	);
+	
+	$( "#blok2" ).hover(
+			function() {$( this ).css('background-color', 'purple');},
+			function() {$( this ).css('background-color', 'blue');}
+		);
+	
+	$( "#button" ).click(function() {
+		  $( 'div' ).css('background-color', 'white');
+		});
+	
+	</script>
+  </body>
+</html>
